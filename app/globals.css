@@ -70,6 +70,15 @@ a {
   color: var(--primary);
 }
 
+.service-card {
+  border-color: var(--border);
+}
+
+.service-card[data-active="true"],
+.service-card:hover {
+  border-color: var(--secondary);
+}
+
 button,
 input,
 textarea,
@@ -122,4 +131,12 @@ select {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

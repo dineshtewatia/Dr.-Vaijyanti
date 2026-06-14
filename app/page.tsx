@@ -2,39 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Baby,
-  CalendarCheck,
   CheckCircle2,
   Clock,
-  HeartHandshake,
-  HeartPulse,
   MapPin,
   MessageCircle,
   Navigation,
   Phone,
-  ShieldCheck,
-  Sparkles,
   Star,
-  Stethoscope,
-  UsersRound
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
 import { MotionReveal } from "@/components/motion-reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { ServicesCarousel } from "@/components/services-carousel";
 import { Button } from "@/components/ui/button";
 import { whatsappUrl } from "@/lib/utils";
-
-const services = [
-  { title: "Pregnancy Care", icon: Baby, text: "Supportive care through pregnancy with attention to comfort, safety, and clear guidance." },
-  { title: "Antenatal Checkups", icon: CalendarCheck, text: "Regular checkups to monitor mother and baby, answer questions, and plan the next steps." },
-  { title: "High-Risk Pregnancy Management", icon: ShieldCheck, text: "Careful monitoring and referral-ready planning for pregnancies that need closer attention." },
-  { title: "Menstrual Disorder Treatment", icon: HeartPulse, text: "Evaluation and treatment planning for irregular, painful, heavy, or concerning periods." },
-  { title: "PCOS/PCOD Management", icon: Sparkles, text: "Personalized care for cycle concerns, hormonal symptoms, lifestyle support, and long-term follow-up." },
-  { title: "Infertility Consultation", icon: HeartHandshake, text: "Sensitive consultation for couples and individuals seeking fertility evaluation and guidance." },
-  { title: "Menopause Care", icon: UsersRound, text: "Calm support for menopausal symptoms, preventive care, and changing health needs." },
-  { title: "Family Planning & Contraception", icon: CheckCircle2, text: "Confidential counseling to help patients choose options that fit their health and plans." },
-  { title: "Routine Gynecological Examination", icon: Stethoscope, text: "Preventive visits, screening guidance, and everyday gynecological concerns." }
-];
 
 const whyChoose = [
   "Experienced gynecological care",
@@ -178,19 +159,7 @@ export default function HomePage() {
           <SectionHeading eyebrow="Services" title="Gynecology services with attentive, personal care" center>
             From routine visits to pregnancy support, each consultation is approached with patience, discretion, and careful next-step planning.
           </SectionHeading>
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <MotionReveal key={service.title} delay={index * 0.035}>
-                <div className="h-full rounded-lg border border-primary/10 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#DDF7EE] text-primary">
-                    <service.icon size={21} />
-                  </div>
-                  <h3 className="clinic-gradient-text mt-4 font-serif text-xl font-semibold">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{service.text}</p>
-                </div>
-              </MotionReveal>
-            ))}
-          </div>
+          <ServicesCarousel />
         </div>
       </section>
 
